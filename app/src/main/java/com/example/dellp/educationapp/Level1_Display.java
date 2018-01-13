@@ -26,7 +26,6 @@ public class Level1_Display  extends View{
     private final Paint mBallBitmapPaint;
     private final Matrix mBallTransformMatrix = new Matrix();
     private final float mPxPerSecond;
-
     private long mStartTime = -1;
 
     public Level1_Display(Context context) {
