@@ -23,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(View view) {
+        if (view == startButton){
+            Intent intent = new Intent(this, StartActivity.class);
+            startActivity(intent);
+        }
         if (view == settingButton) {
             Intent intent = new Intent(this, SettingActivity.class);
             startActivity(intent);
