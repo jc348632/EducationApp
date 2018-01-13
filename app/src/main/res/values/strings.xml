@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">EducationApp</string>
+    <string name="title">Roll The Ball</string>
+    <string name="startButton">Start</string>
+    <string name="leaderboardsButton">LeaderBoards</string>
+    <string name="settingButton">Settings</string>
+</resources>
