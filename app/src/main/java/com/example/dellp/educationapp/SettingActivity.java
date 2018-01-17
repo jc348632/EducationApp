@@ -1,21 +1,39 @@
 package com.example.dellp.educationapp;
 
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Switch;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+
 
 public class SettingActivity extends AppCompatActivity {
 
-    private Switch soundSwitch;
+    Button buttonOn;
+    Button buttonOff;
+    SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
+        buttonOff = (Button) findViewById(R.id.buttonOff);
+        buttonOn = (Button) findViewById(R.id.buttonOn);
+        preferences = PreferenceManager.getDefaultSharedPreferences(this);
+    }
 
-        Switch simpleSwitch = (Switch) findViewById(R.id.soundSwitch); // initiate Switch
-
-        simpleSwitch.setTextOn("On"); // displayed text of the Switch whenever it is in checked or on state
-        simpleSwitch.setTextOff("Off"); // displayed text of the Switch whenever it is in unchecked i.e. off state
+    public void onClick(View view){
+        if (view == buttonOff){
+            preferences.edit().clear().putString("audio","off").apply();
+            Toast.makeText(this,"Audio OFF",Toast.LENGTH_SHORT).show();
+            finish();
+        }
+        if (view == buttonOn){
+            preferences.edit().clear().putString("audio","on").apply();
+            Toast.makeText(this,"Audio ON",Toast.LENGTH_SHORT).show();
+            finish();
+        }
     }
 }

@@ -16,14 +16,18 @@ public class StartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
         level1 = (Button) findViewById(R.id.level1);
-        level2 = (Button) findViewById(R.id.level2);
-        level3 = (Button) findViewById(R.id.level3);
+
+        level1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(StartActivity.this,Level1.class);
+                startActivity(intent);
+            }
+        });
     }
 
-    public void onClick(View view){
-        if (view == level1){
-            Intent start1 = new Intent(this,Level1.class);
-        }
-    }
+
+
+
 
 }
